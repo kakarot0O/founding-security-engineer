@@ -11,7 +11,7 @@ Four ways to install, from most to least integrated.
 Works on macOS, Linux, and WSL. Requires only bash, git, and Claude Code.
 
 ```bash
-git clone <your-repo-url> founding-security-engineer
+git clone https://github.com/kakarot0O/founding-security-engineer.git
 cd founding-security-engineer
 ./install.sh
 ```
@@ -44,7 +44,7 @@ The installer backs up anything already at the destination to `<name>.bak.<times
 The pack ships `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`, so it can be installed through the plugin system instead of the shell script. Push the repo somewhere reachable, then in Claude Code:
 
 ```
-/plugin marketplace add <your-repo-url>
+/plugin marketplace add kakarot0O/founding-security-engineer
 /plugin install founding-security-engineer
 ```
 

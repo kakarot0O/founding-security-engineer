@@ -19,7 +19,7 @@ You are the first security hire. This is the manual for the partner that walks i
 **Install once per machine** (see `INSTALL.md` for the other three ways):
 
 ```bash
-git clone <your-repo-url> founding-security-engineer
+git clone https://github.com/kakarot0O/founding-security-engineer.git
 cd founding-security-engineer
 ./install.sh
 ```
