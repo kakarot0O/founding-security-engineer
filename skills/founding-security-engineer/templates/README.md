@@ -750,6 +750,73 @@ commitment nobody can meet is worse than none, so write the one that is true thi
 reports to, and any new compliance commitment.
 ````
 
+## SESSION-LOG.md
+
+Created at the end of the first session and appended to at the end of every session after it.
+Two parts with different lifecycles: a rolling picture of how this company operates, rewritten
+in place, and an append-only record of what each session moved.
+
+**This file holds no work.** It is not a backlog, not a task list, and not a second risk
+register. Deferred work lives in `RISK-REGISTER.md`, sequenced work in `90-DAY-PLAN.md`,
+outstanding asks in `ACCESS-LOG.md`, and paused work in `CONTEXT-STACK.md`. If you find
+yourself writing something here that somebody could be assigned, it belongs in one of those
+four and you are about to create the split register that `M-4` warns about. The "What moved"
+line carries identifiers only, never a restatement of the row.
+
+**Do not confuse it with `session-01-summary.md`.** That one faces outward: it is written once,
+pasted into the conversation, and read by the person who hired you. This one faces inward. It
+exists so the next session starts knowing what the last one learned, and nobody else needs to
+read it.
+
+The honesty rule: **"What I got wrong" is filled in or explicitly marked as nothing surfaced.**
+A session log where the agent was never wrong about anything is a session log nobody was paying
+attention during. The point of the field is that being wrong about a company early is normal and
+correcting it in writing is what stops the wrong version being repeated for a quarter.
+
+````markdown
+# Session log
+
+Company: <company name>
+Owner: <your name>
+
+## How this company works
+
+Rewritten in place, not appended. This is operating knowledge, not findings: it is the thing
+that makes session five better than session one, and it is the only part of the state directory
+that is about people rather than systems.
+
+**Keep it to roughly one screen.** If a line has not changed a decision in two sessions, it is
+trivia rather than working knowledge, and it goes. A long version of this section is a sign it
+has become a diary.
+
+| What | What I have observed | First seen | Last confirmed |
+| --- | --- | --- | --- |
+| How to reach <name> when it matters | <e.g. answers a phone call the same hour, acknowledges email with a reaction and no reply> | <YYYY-MM-DD> | <YYYY-MM-DD> |
+| Who must be asked before <class of change> | <name, and what they need in order to say yes> | | |
+| Arguments that have landed here | <e.g. framing a control as a deal question rather than a security opinion> | | |
+| Arguments that have not | <e.g. anything that starts with what other companies do> | | |
+| Where decisions actually get made | <e.g. in a call, then confirmed in writing afterwards, not in the channel> | | |
+| What this company will not do, and why | <e.g. no managed devices, laptops are personally owned and expensed> | | |
+| Standing constraints on my asks | <e.g. one ask per week to the only platform engineer, he is the deploy path> | | |
+
+## Sessions
+
+Newest first. One block per session. Keep each block to the six lines below.
+
+### S-001, <YYYY-MM-DD>
+
+- Ran for: <rough wall clock, so a pattern of thirty minute sessions is visible>
+- What moved: <identifiers only. "R-014 opened, R-002 owner set to Priya, A-003 sent, GB-01 blocked on A-001". Never restate the row.>
+- What I learned about how they work: <one or two lines, or "nothing new". Anything durable is promoted into the section above.>
+- What I got wrong, and the correction: <what I believed at the start of this session that turned out to be false, or "nothing surfaced">
+- Open when this ended: <the single thing the next session opens with>
+- Human's state: <optional, one line. Overloaded, waiting on somebody, about to go on leave. It changes what is reasonable to propose next time.>
+
+## Changelog
+
+- <YYYY-MM-DD>: file created.
+````
+
 ## INCIDENT-TEMPLATE.md
 
 This is a template, not a live file. Copy it to `incidents/INC-<YYYY>-<NNN>-<short-slug>.md` when an incident is declared, and fill it as you go rather than reconstructing it afterwards. The honesty rule: **the timeline is written in the moment, in Coordinated Universal Time, and is never edited retroactively.** If you learn later that an entry was wrong, add a new entry correcting it. An edited timeline is worthless to a lawyer, an auditor, and to you.
@@ -933,6 +1000,7 @@ Use this as the routing table. If an event is not on this list and you are unsur
 | Enumerated laptops or workstations | `devices.csv` (CS-2) | Create on demand. Summarise the enrolled fraction in the CS-2 row. |
 | Agreed who decides what with the person the human reports to | `SECURITY-CHARTER.md` (05 metrics and comms) | Create on demand, in Gate A. Record the date it was agreed and who signed it in `DECISION-LOG.md`. |
 | Wrote the first session's handover | `session-01-summary.md` | Cold start only. See `references/00-cold-start.md`. |
+| Ending a session, any session | `SESSION-LOG.md` | Append the six line block. Update `## How this company works` in place if it changed. Identifiers only, never a restatement of a row that lives elsewhere. |
 | Drafted something not yet published or sent | `drafts/` | Nothing in this folder is external until a human approves it. |
 | An incident is declared | `incidents/INC-<YYYY>-<NNN>-<slug>.md` | Copy from the incident template |
 | Anything happens during an incident | The incident file | Timeline, immediately, in Coordinated Universal Time |

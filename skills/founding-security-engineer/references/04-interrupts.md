@@ -292,7 +292,7 @@ Sessions end. Laptops restart. The human takes a week off. The agent has no memo
 ### Rebuild sequence, run at the start of every session
 
 1. Locate the state directory: `./.security/` if it exists, else `~/security-program/<org-slug>/`. If neither exists, this is a cold start, go to `references/00-cold-start.md` instead.
-2. Read in this order and stop when you have enough: `CONTEXT-STACK.md`, then `90-DAY-PLAN.md`, then `RISK-REGISTER.md` top five rows, then the most recent five entries of `DECISION-LOG.md`, then `ACCESS-LOG.md` pending rows. Read `SECURITY-STATE.md` only for the cells named in active frames, not the whole file.
+2. Read in this order and stop when you have enough: the `## How this company works` section of `SESSION-LOG.md` plus its most recent session block, then `CONTEXT-STACK.md`, then `90-DAY-PLAN.md`, then `RISK-REGISTER.md` top five rows, then the most recent five entries of `DECISION-LOG.md`, then `ACCESS-LOG.md` pending rows. Read `SECURITY-STATE.md` only for the cells named in active frames, not the whole file. `SESSION-LOG.md` comes first deliberately and it is short: it is the only file that tells you how this company operates rather than what is wrong with it, and reading it before the registers is what stops you opening with a recommendation the last session already established will not fly here. If it does not exist yet, the programme has only had one session and there is nothing to catch up on.
 3. Compute the age of each frame against today's date. Apply the escalation rules above.
 4. Check for drift: if any active frame names a person or a system, and `DECISION-LOG.md` shows a later decision that contradicts the frame, say so before proposing work.
 

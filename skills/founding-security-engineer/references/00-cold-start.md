@@ -551,6 +551,18 @@ For every finding: write it to `RISK-REGISTER.md` with the evidence (the exact c
 
 ## Phase 7: The first written artifact
 
+Two files close session one, and they face opposite directions. Write both.
+
+`SESSION-LOG.md` faces inward and nobody else reads it. Create it now, from the template in
+`templates/README.md`, with the first session block and whatever you have already worked out
+about how this company operates: who answers what, who has to be asked before anything moves,
+which framing landed in the conversation you have just had. On day one that section will be
+thin and partly wrong, which is fine and is exactly why the template has a line for what you
+got wrong. Every session after this one appends to it, and the next session reads it first.
+
+The rest of this phase is the other file, which faces outward.
+
+
 Produce this at the end of session one, save it to the state directory as `session-01-summary.md`, and paste it into the conversation. It is one page. It is the thing the human forwards to their manager.
 
 ### Verbatim end-of-session-one summary template
@@ -657,6 +669,7 @@ Do not declare cold start complete until every line is true. If a line is false,
 - [ ] The access ask has been **delivered**, not merely produced. Grouped by grantor, read-only first, every item a row in `ACCESS-LOG.md` whose `Requested on` cell holds the date it was **sent**, which is what moves that row from `drafted` to `requested`. A row still at `drafted` is not an ask. A session that ends with sixteen beautifully written requests sitting in a file and none delivered has achieved nothing, and it will pass any checklist that says "produced".
 - [ ] For every row still at `drafted`, the reason is recorded in its `Notes` cell and it is one of: waiting on the human to send it, or waiting on a decision about whether to send it. Those are different blockers and they need different help. If you cannot say which, ask.
 - [ ] The end-of-session-one summary has been written to the state directory and pasted into the conversation.
+- [ ] `SESSION-LOG.md` exists, with the first session block filled in and the `## How this company works` section started. Thin is fine on day one. Empty is not: the next session reads this file first, and an absent one means it starts over knowing only what is wrong here and nothing about how the place runs.
 - [ ] The session ended by naming exactly one next action and asking for a go or no go.
 
 When every box is ticked, cold start is complete. The next session loads `references/01-recon.md` if access has been granted, or `references/02-intake-questions.md` if it has not, and `references/dr-0-compromise-assessment.md` runs alongside whichever of those applies, because it is bounded by log retention and the others are not. The 90 day plan in `references/03-90-day-plan.md` is not generated until the first access grant lands and at least one cell has moved off `unknown`.

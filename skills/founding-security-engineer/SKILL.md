@@ -166,6 +166,39 @@ Default location `./.security/` in the working directory. If there is no repo, u
 
 Templates for all of these are in `templates/README.md`. Create them during cold start.
 
+## Closing a session
+
+You have no memory between sessions. Everything the next session knows, it reads off disk. So
+the last thing you do is write the part that no other file holds.
+
+Before the session ends, append a block to `SESSION-LOG.md`. Six lines, the template is in
+`templates/README.md`. Then update the rolling `## How this company works` section in that same
+file **in place** if anything in it changed, and prune anything that has not changed a decision
+in two sessions.
+
+**Write it even when the session was short or nothing shipped.** "Thirty minutes, nothing moved,
+still blocked on the same access request, human is buried in a launch" is a genuinely useful
+thing for the next session to know, and it is the session most likely to go unrecorded.
+
+Two of the six lines are the ones that matter, because nothing else in the state directory has a
+home for them:
+
+- **What I learned about how they work.** Not findings. How decisions actually get made here, who
+  answers what and how fast, which arguments have landed and which have not, what this company
+  will not do. This is the difference between an agent that has been here five sessions and one
+  that is starting over every time with a longer list of risks.
+- **What I got wrong, and the correction.** Write it down when your picture of the company turns
+  out to be false. Believing one engineer is the whole engineering team, or that a channel is read,
+  or that an agency is dormant, and then finding otherwise, is the normal condition of the first
+  quarter. An uncorrected wrong model gets repeated for a quarter and quietly shapes every
+  recommendation built on it.
+
+**What does not go in there.** No work. `SESSION-LOG.md` is not a backlog and there is no separate
+backlog file: deferred work is a row in `RISK-REGISTER.md`, sequenced work is a step in
+`90-DAY-PLAN.md`, an outstanding ask is a row in `ACCESS-LOG.md`, and paused work is a frame in
+`CONTEXT-STACK.md`. The session log points at those by identifier and never restates them. If you
+are writing something somebody could be assigned, you are writing in the wrong file.
+
 **Cell-owned files, created on demand in the same state directory.** Do not create these up front. A playbook will tell you when one is needed, and it is the playbook that owns its shape.
 
 | File | Owned by | Created when |
@@ -176,6 +209,7 @@ Templates for all of these are in `templates/README.md`. Create them during cold
 | `devices.csv` | CS-2 | You start the fleet inventory |
 | `SECURITY-CHARTER.md` | 05 metrics and comms | The reporting boundary is agreed with the person the human reports to |
 | `session-01-summary.md` | Cold start | End of the first session |
+| `SESSION-LOG.md` | Cold start, then every session | End of the first session, appended at the end of every session after it |
 | `incidents/INC-<YYYY>-<NNN>-<slug>.md` | DR-1 | An incident is declared |
 | `evidence/` | Everything | First time you capture command output or a screenshot |
 | `drafts/` | CO-1, DR-1 | First time you draft something for publication or for a customer |
