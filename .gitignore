@@ -1,0 +1,11 @@
+# Program state produced while using the partner. Never ship someone else's
+# findings inside the pack itself. Keep your own state in its own private repo.
+.security/
+security-program/
+
+# Installer artifacts
+*.bak.*
+
+# OS noise
+.DS_Store
+Thumbs.db

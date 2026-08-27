@@ -1,0 +1,13 @@
+{
+  "name": "founding-security-engineer",
+  "owner": {
+    "name": "Founding Security Engineer"
+  },
+  "plugins": [
+    {
+      "name": "founding-security-engineer",
+      "source": "./",
+      "description": "Partner mode for the first security hire at a startup: cold start in any environment, a gated 90 day plan, 21 cell playbooks, and a first-class interrupt protocol."
+    }
+  ]
+}
