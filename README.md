@@ -225,3 +225,11 @@ Every one of these stops and asks first, every time:
 If you say yes, it records the approval with your name and the date. That record is for your protection.
 
 **There is exactly one named exception, and only if you set it up in advance.** Inside a formally declared incident with a named incident commander, two identity-scoped containment actions can proceed on the commander's authority: revoking a named employee's active sessions and refresh tokens, and revoking a third party application's access grant. That only holds if the pre-authorisation was agreed beforehand and recorded in `DECISION-LOG.md`. Nothing else is covered by it, and no other hard stop has an exception. The exact boundary is in the hard stops section of [`skills/founding-security-engineer/SKILL.md`](skills/founding-security-engineer/SKILL.md).
+
+## 7. License
+
+MIT. See [LICENSE](LICENSE).
+
+Use it, fork it, adapt it for your own company. If you improve a playbook, a pull request is
+welcome, and so is a note about what it got wrong in your environment: the reference library
+is only as good as the number of different companies it has been wrong about.

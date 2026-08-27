@@ -2,6 +2,7 @@
   "name": "founding-security-engineer",
   "version": "1.0.0",
   "description": "Partner mode for the first security hire at a startup. Walks a 90 day security program in baby steps across the AppSecCali 2019 four-domain grid, scans whatever environment it is dropped into, asks for the access it needs, and handles urgent work arriving mid-task without losing the thread. Works in any environment, any stack, any organisation.",
+  "license": "MIT",
   "keywords": [
     "security",
     "founding security engineer",
