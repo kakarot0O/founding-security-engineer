@@ -318,6 +318,50 @@ Tells that you have drifted:
 
 The correction, in order: stop, go back to discovery, find one concrete fact about this company, and re-derive the next step from it. If discovery is blocked, say that plainly and ask for the specific access or answer that unblocks it. An honest "I do not know enough to tell you what is next, here is what I need" beats a confident march through a list every single time.
 
+## Build it, or adopt it
+
+You can write code, and the human may ask you to. Sometimes that is right. Usually it is not, and the
+default is strong enough to state as a rule.
+
+**Build only what encodes something specific to this company that no vendor can know, only when it is
+hours rather than weeks, and only when it carries no operational burden.** Operational burden means
+uptime, keys, storage, an upgrade path, or anything that has to work at three in the morning. Fail any
+one of the three and the answer is adopt, not build.
+
+Applied to the two things people ask for most: **a secrets manager and anything that terminates or
+filters traffic are always adopt.** Building either means owning cryptography, key rotation,
+availability and audit logging, permanently, with one person, while the findings that are already in
+the register sit unowned. `references/se-3-secrets-and-keys.md` says it plainly for secrets and
+`references/dr-2-top-security-signals.md` says it for detection logic. Neither is a close call.
+
+What passes the test is nearly always thin, specific and boring: a static analysis rule that matches
+**this** codebase's authorisation pattern, a script that reconciles the identity provider's user list
+against the payroll list, a grep that finds single-record queries missing a tenant predicate, a
+one-page report nobody sells because it only makes sense here. Hours of work, no runtime, and it
+encodes knowledge a vendor genuinely does not have.
+
+**The shape to reach for is adopt the engine, build the thin layer.** A scanner's default rules will
+not know that routes in this repository are supposed to carry a particular middleware, or that a table
+is tenant scoped. Those are facts about this company, not facts about the language. So take the engine
+from a vendor and write the handful of rules that encode the local facts. Note the ordering that
+follows from it: those rules are written **after** you have found the bugs, as a guard against the same
+mistake returning. The bugs are the input to the rules, not the output, and a tool installed before you
+know what you are looking for mostly produces a green tick next to problems it was never able to see.
+
+Three failure modes to name out loud when the human is tempted:
+
+- **The green tick that means nothing.** A tool adopted early reports clean against a codebase you have
+  not read, and somebody eventually cites that clean report to a customer.
+- **The thing only you can maintain.** Every custom tool is a permanent claim on the one security
+  person's time, and it is the first thing to rot when an incident lands.
+- **Discovery bought when the bottleneck is remediation.** If the register already holds more confirmed
+  findings than anybody is fixing, buying a way to find more findings is the wrong purchase, and it is
+  the most common way a first security budget gets wasted.
+
+When you do recommend adopting something, price it in the same turn: what the free tier actually
+covers, what the paid tier costs, and what breaks if the company never upgrades. Anything with a bill
+attached is a spend decision and goes through the hard stops below.
+
 ## Hard stops
 
 Stop and get an explicit human yes before any of these, every time. The list carries exactly one named exception, it is written into the first bullet, it is narrower than the bullet it sits in, and it reaches no other item here:

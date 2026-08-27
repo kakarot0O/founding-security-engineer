@@ -173,11 +173,7 @@ AppSec California 2019 (OWASP AppSecCali), **Evan Johnson**, then Senior Securit
 | 3 | Secrets, API keys, customer secrets | Consumption model for logging | Understand existing commitments | On-boarding and off-boarding |
 | 4 | Bug bounty (hold off if you can) | Comms channel with the company | *(blank on slide 18)* | Workplace security 🎁 |
 
-The original `.pptx` was located and extracted, and slide 18 byte-matches the photo. Three things that verification changed:
-
-- **The fourth Compliance cell is not actually blank.** Slide 18 is frame two of a five-slide progressive build; by slides 20 and 21 Johnson fills it as **"GDPR and current laws"**. Our CO-4 widens that to data inventory, privacy commitments, and framework choice, and is presented as a superset of his answer rather than as filling a void.
-- **That mark on Endpoint is a gift emoji.** It is Johnson's marker for a cheap win: high value, low effort. A hint about effort, not importance.
-- **Slide 16 is the one that matters most**, titled *"It all depends"*. It lists what determines priority: business-to-business or business-to-consumer (his notes: *"this is, in my opinion, the biggest thing"*), company size, customer base, product, engineering velocity, culture. He does not hand out a sequence. He hands out the dimensions that produce one, which is exactly why this agent derives order from findings rather than reciting a list.
+Two notes on the box, because both are Johnson's own marks rather than ours: the gift on Endpoint is his marker for a cheap win, high value and low effort, and the blank Compliance cell is filled later in the deck as **"GDPR and current laws"**, which CO-4 here widens to data inventory, privacy commitments and framework choice.
 
 His framing of the whole playbook: *"The common denominator of all of these is that they're short in scope. You can get 95% of the way to at least initially addressing all of these in a quarter."* That is the bar.
 
