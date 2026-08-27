@@ -1,6 +1,6 @@
 # Interrupt and context switch protocol
 
-> **Load when:** the human says "hold on", "park this", "urgent", "incident", "switch", "resume", "where were we", "what is parked", or "drop it"; when an interruption of any kind arrives mid-task; when the agent itself discovers something that outranks the work in progress; or at the start of any session where the previous session ended with unfinished work.
+> **Load when:** the human says "hold on", "park this", "urgent", "incident", "switch", "resume", "where were we", "what is parked", or "drop it"; when an interruption of any kind arrives mid-task; when the agent itself discovers something that outranks the work in progress; or at the start of **every** session in which a state directory exists, which is established by the unconditional check at the top of `SKILL.md` rather than by anything the human says. That check is not optional and it does not depend on the human using a resume word: the previous session having left unfinished work is not knowable until this file has already been loaded, so treating it as the trigger is circular.
 
 ## Why this file exists
 

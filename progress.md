@@ -337,6 +337,83 @@ to hand to a first security hire who reads what it writes before acting. What re
 ready for someone who does not is #34, the thirteen shell blocks that fail to parse when pasted, and
 #35, the residual unverified vendor claims.
 
+## Multi-session field test: the cross-session mechanism, and the defect it found
+
+Run 2026-08-27 against the committed fixture. Three sessions, each with a **fresh partner instance
+holding no conversational memory**, one persistent human throughout, gaps between sessions. Artifacts
+in `examples/multi-session-test/`.
+
+**The mechanism works, and the evidence is that knowledge moved between instances that never spoke.**
+Session A recorded that Dev Patel is the only committer and therefore "the whole ask budget for
+anything touching code". Session B, which had never met Sam, used that exact phrase to justify
+escalating from written messages to a fifteen minute call. Session A recorded in `What I got wrong`
+that its findings described the repository rather than the running service, because three imported
+modules were never committed; session B carried that caveat into its message to the engineer instead
+of asserting production behaviour. Session A caught itself giving advice that contradicted `SKILL.md`
+rule 10, and wrote down the corrected rule; session B then batched four criticals into one message
+exactly as the correction prescribed.
+
+**Session B did the thing a rolling section has to do to stay useful: it overwrote its predecessor.**
+It inverted the characterisation of Dev's channel from "Slack" to "not by Slack text" on a second data
+point, and rewrote the time constraint after Sam promised proper time and was cut short anyway:
+"assume half an hour, every time... size work off the pattern rather than off Sam's forecast of the
+day, and make every turn survive being the last one." It also promoted its own four day error into a
+new reusable row rather than leaving it buried in a session block. Rows went 9 to 10 to 10 across
+three sessions, and the five rows with no new evidence were left untouched and correctly dated.
+
+**Then session C failed, and it is the most valuable failure in the project's history.** The context
+rebuild sequence lived in `references/04-interrupts.md`, loaded on phrases like "where were we" or
+"resume", plus a clause reading "at the start of any session where the previous session ended with
+unfinished work". That clause is circular: whether the previous session left unfinished work cannot
+be known until the state directory has been read, which is what the rebuild sequence does. Session B
+opened with "where were we" and produced flawless continuity. Session C opened with "dev finally got
+back to me, what do I need from him in twenty minutes", which carries no resume signal, never loaded
+the file, and treated a nine day old programme as a cold start. It re-derived all ten findings,
+asked whether the repository was public after the previous session had answered exactly that, and
+closed by offering to create a state directory that already held eleven risks, two session blocks and
+two decisions.
+
+**The failure shape is the point.** Session C's turn was excellent. It refused to open a test pull
+request because that test would itself run submitted code with production credentials, it parked the
+`docs/security.md` gap as a founders-and-counsel conversation rather than an engineer one, and it
+budgeted the twenty minutes minute by minute. Confident, competent, and starting from zero, with
+nothing in the output to suggest anything was wrong. A user who opens with a task rather than a resume
+phrase, which is how people actually open, silently loses the entire programme history every time.
+Neither smoke test could surface this, because both were single sessions.
+
+**Fixed in the always-loaded file and verified by direct A/B.** An unconditional two command check now
+sits at the top of `SKILL.md` above everything else, and the circular condition in `04-interrupts.md`
+is corrected. A fourth fresh instance was then given the identical prompt that broke session C,
+against identical state, with only the skill changed. It opened by citing the repository as Private
+with only two pull requests ever, both the engineer's, and used that inherited fact to **de-escalate**
+the build pipeline finding to least urgent of four rather than inflating it. Inherited context that
+only ever raises alarm is a ratchet rather than memory, so de-escalation is the harder and more
+meaningful direction. It carried session A's uncommitted-modules caveat forward as the single highest
+value question for the meeting, and knew both that the access ask to the chief executive was written
+and unsent and which finding was blocked on a role inside it. Recorded as #41.
+
+**The honesty field held three times out of three, and the third is the strongest.** Session C2's
+close-out reads: "I recorded on 2026-08-31 that written findings do not reach Dev on any predictable
+timescale and built the plan on it... The reply came overnight. The ask that worked on Dev was the
+smallest one anybody had sent him. Two written findings got nothing across three working days; two
+lines asking for fifteen minutes got a reply." A later session falsified its predecessor's operating
+knowledge rather than inheriting it as fact. That is what stops a rolling section calcifying into
+dogma, and it is the behaviour the field was added to produce.
+
+**One rule was added mid-test and immediately used.** Session A drafted its session block before the
+session ended, which is the right call when the human works in unpredictable blocks, and left a wrong
+exchange count on disk for six minutes. Its own suggestion was to write anything not yet knowable as
+`TBC` so that a skipped revision fails visibly rather than reading as correct. Shipped during the
+test; session C2 used it six times when its session ended before the meeting it was about.
+
+**The turn-structure rule shipped earlier the same day also held.** Across session A's four turns the
+first actionable element was at word 0 every time, against a median of 434 words in smoke test run 2,
+and prose fell monotonically at 745, 697, 625, 258 words while total length tracked payload. Session B
+opened at 542 words rather than session A's 888, because the operating knowledge it inherited recorded
+that long turns get pushed back. Worth recording that total word count nearly caused a mis-grade here:
+turn 3 rose to 957 words and looked like a regression, when 332 of those words were a pasteable message
+and its prose had in fact dropped again.
+
 ## In progress
 
 - Nothing in flight.

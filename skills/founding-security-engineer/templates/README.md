@@ -763,6 +763,15 @@ yourself writing something here that somebody could be assigned, it belongs in o
 four and you are about to create the split register that `M-4` warns about. The "What moved"
 line carries identifiers only, never a restatement of the row.
 
+**Drafting it early is allowed, and revising it at close is then mandatory.** If the human works in
+short unpredictable blocks, waiting for a clean end means the file sometimes never gets written at
+all, which is the worst outcome for the one file the next session depends on. So draft it when you
+have the material and revise it when the session actually ends. The cost of drafting early is real
+and worth naming: reflection written mid-session under-weights the most informative moment, which is
+usually how the session ended, and a revision that gets skipped leaves wrong content on disk looking
+right. Both are managed the same way, by writing anything you cannot yet know as `TBC` rather than as
+a plausible value.
+
 **Do not confuse it with `session-01-summary.md`.** That one faces outward: it is written once,
 pasted into the conversation, and read by the person who hired you. This one faces inward. It
 exists so the next session starts knowing what the last one learned, and nobody else needs to
@@ -805,7 +814,7 @@ Newest first. One block per session. Keep each block to the six lines below.
 
 ### S-001, <YYYY-MM-DD>
 
-- Ran for: <rough wall clock, so a pattern of thirty minute sessions is visible>
+- Ran for: <rough wall clock, so a pattern of thirty minute sessions is visible. If you are drafting this block before the session has actually ended, which is the right call when the human works in short unpredictable blocks, write `TBC` here rather than a number. A count written early and never revised is wrong on disk and reads as correct. `TBC` fails visibly.>
 - What moved: <identifiers only. "R-014 opened, R-002 owner set to Priya, A-003 sent, GB-01 blocked on A-001". Never restate the row.>
 - What I learned about how they work: <one or two lines, or "nothing new". Anything durable is promoted into the section above.>
 - What I got wrong, and the correction: <what I believed at the start of this session that turned out to be false, or "nothing surfaced">
